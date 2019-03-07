@@ -1,6 +1,6 @@
 //Variables
-var nav = document.getElementById('nav');
-navH = nav.offsetHeight;
+var nav = document.getElementById('nav'),
+navH;
 
 // ScrollSpy
 var section = document.querySelectorAll('section');
@@ -11,6 +11,7 @@ section.forEach((e, i) => {
 
 //Document Scroll
 document.onscroll = () => {
+	navH = nav.offsetHeight;
 	var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 	for (let i in sections) {
 		if (sections[i] <= scrollPosition + navH) {
@@ -18,8 +19,9 @@ document.onscroll = () => {
 			document.querySelector('a[class*=' + i + ']').classList.add('active');
 		}
 	}
+
 	// Cambiar color
-	if(document.documentElement.scrollTop > navH || document.body.scrollTop > navH){
+	if(scrollPosition > navH){
 		nav.classList.add('bg-blue');
 	}else{
 		nav.classList.remove('bg-blue');
