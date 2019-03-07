@@ -1,7 +1,7 @@
 //Variables
 var nav = document.getElementById('nav');
 navH = nav.offsetHeight;
-console.log(navH);
+
 // ScrollSpy
 var section = document.querySelectorAll('section');
 sections = [];
