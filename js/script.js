@@ -2,6 +2,11 @@
 var nav = document.getElementById('nav'),
 navH;
 
+window.onload = () => {
+	navH = nav.offsetHeight
+	console.log(navH);
+}
+
 // ScrollSpy
 var section = document.querySelectorAll('section'),
 sections = [],
@@ -12,7 +17,6 @@ section.forEach((e, i) => {
 
 //Document Scroll
 document.onscroll = () => {
-	navH = nav.offsetHeight;
 	scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 	for (let i in sections) {
 		if (sections[i] <= scrollPosition + navH) {
