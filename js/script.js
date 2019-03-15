@@ -3,8 +3,9 @@ var nav = document.getElementById('nav'),
 navH;
 
 // ScrollSpy
-var section = document.querySelectorAll('section');
-sections = [];
+var section = document.querySelectorAll('section'),
+sections = [],
+scrollPosition;
 section.forEach((e, i) => {
 	sections[e.id] = e.offsetTop;
 });
@@ -12,7 +13,7 @@ section.forEach((e, i) => {
 //Document Scroll
 document.onscroll = () => {
 	navH = nav.offsetHeight;
-	var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+	scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 	for (let i in sections) {
 		if (sections[i] <= scrollPosition + navH) {
 			document.querySelector('.active').classList.remove('active');
