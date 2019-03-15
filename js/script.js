@@ -2,18 +2,24 @@
 var nav = document.getElementById('nav'),
 navH;
 
-window.onload = () => {
-	navH = nav.offsetHeight
-	console.log(navH);
-}
-
 // ScrollSpy
 var section = document.querySelectorAll('section'),
 sections = [],
 scrollPosition;
-section.forEach((e, i) => {
-	sections[e.id] = e.offsetTop;
-});
+
+window.onload = ()=>{
+	navH = nav.offsetHeight;
+	section.forEach((e, i) => {
+		sections[e.id] = e.offsetTop;
+	});
+}
+
+window.onresize = ()=>{
+	navH = nav.offsetHeight;
+	section.forEach((e, i) => {
+		sections[e.id] = e.offsetTop;
+	});
+}
 
 //Document Scroll
 document.onscroll = () => {
