@@ -37,7 +37,7 @@ header nav{
 	box-shadow: 0 1px 6px rgba(0, 00, 0, .3);
 }
 .bg-blue{
-	background-color: #083d77;
+	background-color: transparent;
 }
 #nav .container{
 	padding: 0 50px;
